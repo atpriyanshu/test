@@ -1,0 +1,46 @@
+// CONTAINERS
+.container {
+  padding: 0;
+  margin: 0;
+  max-width: var(--mx-width, 500px);
+}
+
+// FLEX PROPERTIES
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+.flex-content-center {
+  @extend .flex;
+  place-content: center;
+}
+.flex-items-center {
+  @extend .flex;
+  place-items: center;
+}
+.flex-center {
+  @extend .flex;
+
+  place-content: center;
+  place-items: center;
+}
+
+// GRID PROPERTIES
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+.grid-content-center {
+  @extend .grid;
+  place-content: center;
+}
+.grid-items-center {
+  @extend .grid;
+  place-items: center;
+}
+.grid-center {
+  @extend .grid;
+  
+  place-content: center;
+  place-items: center;
+}

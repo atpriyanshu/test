@@ -1,0 +1,9 @@
+package-lock.json
+dist
+node_modules
+
+# remove editor generated files
+.vscode
+
+# for having local rough files
+**/*.rough

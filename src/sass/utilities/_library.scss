@@ -1,0 +1,74 @@
+@use "../abstracts" as *;
+
+$colors: (
+  "white": #ffffff,
+  "primary": hsl(var(--clr-primary-400)),
+  "black": #000000,
+);
+
+$font-families: (
+  "serif": var(--ff-serif),
+  "sans": var(--ff-sans),
+  "sans-cond": var(--ff-sans-cond),
+);
+
+$font-sizes: (
+  "200": var(--fs-200),
+  "300": var(--fs-300),
+  "400": var(--fs-400),
+  "500": var(--fs-500),
+  "600": var(--fs-600),
+  "700": var(--fs-700),
+  "800": var(--fs-800),
+  "900": var(--fs-900),
+);
+
+$paddings: (
+  "1": 0.25rem,
+  "2": 0.5rem,
+  "3": 0.75rem,
+  "4": 1rem,
+  "5": 1.25rem,
+  "6": 1.5rem,
+  "7": 1.75rem,
+  "8": 2rem,
+);
+$margins: (
+  "1": 0.25rem,
+  "2": 0.5rem,
+  "3": 0.75rem,
+  "4": 1rem,
+  "5": 1.25rem,
+  "6": 1.5rem,
+  "7": 1.75rem,
+  "8": 2rem,
+);
+
+// FONTS
+@include createUtilities("text", "color", $colors);
+@include createUtilities("fs", "font-size", $font-sizes);
+@include createUtilities("ff", "font-family", $font-families);
+
+.text-center { text-align: center; }
+.uppercase { text-transform: uppercase; }
+
+// BACKGROUNDS
+@include createUtilities("bg", "background-color", $colors);
+
+// PADDINGS
+@include createUtilities("p", "padding", $paddings);
+@include createUtilities("pt", "padding-top", $paddings);
+@include createUtilities("pl", "padding-left", $paddings);
+@include createUtilities("pb", "padding-bottom", $paddings);
+@include createUtilities("pr", "padding-right", $paddings);
+@include createUtilities("px", "padding-inline", $paddings);
+@include createUtilities("py", "padding-block", $paddings);
+
+// MARGINS
+@include createUtilities("m", "margin", $margins);
+@include createUtilities("mt", "margin-top", $margins);
+@include createUtilities("ml", "margin-left", $margins);
+@include createUtilities("mb", "margin-bottom", $margins);
+@include createUtilities("mr", "margin-right", $margins);
+@include createUtilities("mx", "margin-inline", $margins);
+@include createUtilities("my", "margin-block", $margins);

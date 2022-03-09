@@ -1,0 +1,20 @@
+@use "./breakpoints" as *;
+
+// MEDIA QUIRES
+@mixin media($screen: medium) {
+  @if (map-get($breakpoints, $screen)) {
+    $screen: map-get($breakpoints, $screen);
+  }
+  @media (min-width: $screen) {
+    @content;
+  }
+}
+
+// UTILITY CLASS GENERATOR
+@mixin createUtilities($selector: "", $property, $values) {
+  @each $key, $value in $values {
+    .#{$selector}-#{$key} {
+      #{$property}: #{$value};
+    }
+  }
+}
