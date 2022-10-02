@@ -1,0 +1,29 @@
+name: Hello World on Release
+
+on:
+  release:
+    types: [published]
+  push:
+
+env:
+  MESSAGE: "Hello World"
+  TAG: ${{ github.event.release.tag_name }}
+
+jobs:
+  message-logger:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Info
+      run: echo ${{ env.MESSAGE }}
+  
+  tag-logger:
+    runs-on: ubuntu-latest
+    if: github.event.release.tag_name
+    
+    steps:
+      - uses: actions/checkout@v3
+      - name: Tag
+        run: echo The tag is ${{ env.TAG }}
