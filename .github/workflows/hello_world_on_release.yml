@@ -13,3 +13,6 @@ jobs:
 
     - name: Hello_World
       run: echo Hello_World
+
+    - name: Hello_World
+      run: "echo '${{env.x1}}'"
