@@ -1,12 +1,12 @@
 name: Hello World on Release
 
 on: release
+env:
+  inputsEnv: ${{ inputs }}
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      inputsEnv: ${{ inputs }}
     
     steps:
     - uses: actions/checkout@v3
