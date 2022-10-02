@@ -5,9 +5,11 @@ on: release
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      x1: ${{ inputs }}
     
     steps:
     - uses: actions/checkout@v3
 
     - name: Hello_World
-      run: echo Hello_World
+      run: "echo Hello_World; $(env.x1): ${env.x1}"
