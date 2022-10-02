@@ -7,9 +7,10 @@ on:
 
 env:
   MESSAGE: "Hello World"
+  TAG: ${{ github.event.release.tag_name }}
 
 jobs:
-  build:
+  message-logger:
     runs-on: ubuntu-latest
     
     steps:
@@ -17,3 +18,12 @@ jobs:
 
     - name: Info
       run: echo ${{ env.MESSAGE }}
+  
+  tag-logger:
+    runs-on: ubuntu-latest
+    if: ${{ env.TAG }}
+    
+    steps:
+      - uses: actions/checkout@v3
+      - name: Tag
+        run: echo The tag is ${{ env.TAG }}
