@@ -6,7 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      x1: ${{ inputs }}
+      inputsEnv: ${{ inputs }}
     
     steps:
     - uses: actions/checkout@v3
@@ -15,4 +15,4 @@ jobs:
       run: echo Hello_World
 
     - name: Hello_World
-      run: "echo '${{env.x1}}'"
+      run: "echo '${{env.inputsEnv}}'"
