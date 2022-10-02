@@ -3,7 +3,6 @@ name: Hello World on Release
 on:
   release:
     types: [published]
-  push:
 
 env:
   MESSAGE: "Hello World"
