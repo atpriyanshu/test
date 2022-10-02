@@ -5,6 +5,8 @@ on:
     types: [published]
   push:
 
+env:
+  MESSAGE: "Hello World"
 
 jobs:
   build:
@@ -14,4 +16,4 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: Info
-      run: echo "Hello World"
+      run: echo ${{ env.MESSAGE }}
